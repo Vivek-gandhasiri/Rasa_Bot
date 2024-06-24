@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <style>
+        /* Add your custom styles here */
+        .chat-container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            background-color: #f9f9f9;
+        }
+        .chat-message {
+            margin: 10px 0;
+        }
+        .user-message {
+            text-align: right;
+            color: #007bff;
+        }
+        .bot-message {
+            text-align: left;
+            color: #28a745;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <div id="chat-log">
+            <!-- Chat messages will be displayed here -->
+        </div>
+        <input type="text" id="user-input" placeholder="Type your message...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.2.0/socket.io.js"></script>
+    <script>
+        // Establish WebSocket connection with the Flask server
+        const socket = io.connect('http://localhost:5000');
+
+        // Function to handle receiving messages from the server
+        socket.on('response', function(data) {
+            var botMessage = '<div class="chat-message bot-message">' + data.data + '</div>';
+            document.getElementById("chat-log").innerHTML += botMessage;
+        });
+
+        function sendMessage() {
+            var userInput = document.getElementById("user-input").value;
+            var userMessageElement = '<div class="chat-message user-message">' + userInput + '</div>';
+            document.getElementById("chat-log").innerHTML += userMessageElement;
+
+            // Send the user message to the server via WebSocket
+            socket.emit('message', userInput);
+
+            // Clear the user input field
+            document.getElementById("user-input").value = "";
+        }
+    </script>
+</body>
+</html>

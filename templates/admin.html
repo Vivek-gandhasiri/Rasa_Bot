@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Match</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Add Match</h1>
+        <form action="{{ url_for('admin') }}" method="post">
+            <input type="text" name="game" placeholder="Game" required>
+            <input type="text" name="team1" placeholder="Team 1" required>
+            <input type="text" name="team2" placeholder="Team 2" required>
+            <input type="date" name="date" required>
+            <input type="number" step="0.01" name="bet1" placeholder="Bet Value for Team 1" required>
+            <input type="number" step="0.01" name="bet2" placeholder="Bet Value for Team 2" required>
+            <button type="submit">Add Match</button>
+        </form>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Upcoming Matches</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Game</th>
+                <th>Team 1</th>
+                <th>Team 2</th>
+                <th>Date</th>
+                <th>Bet Value for Team 1</th>
+                <th>Bet Value for Team 2</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for match in matches %}
+            <tr>
+                <td>{{ match[1] }}</td>
+                <td>{{ match[2] }}</td>
+                <td>{{ match[3] }}</td>
+                <td>{{ match[4] }}</td>
+                <td>{{ match[5] }}</td>
+                <td>{{ match[6] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

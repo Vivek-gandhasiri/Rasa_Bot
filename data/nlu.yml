@@ -1,0 +1,117 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+
+- intent: PlaceBetIntent
+  examples: |
+    - I want to bet
+    - I want to place a bet on Manchester United vs Chelsea match.
+    - Can I bet on the basketball game?
+    - How can I place a bet on Real Madrid vs Barcelona?
+    - I'd like to bet on the cricket match.
+
+- intent: BetStatusIntent
+  examples: |
+    - I want to {} 
+    - I want to know my bet status.
+    - Check my bet status.
+    - What's the status of my bet on Liverpool vs Arsenal?
+    - Can you tell me if my bet has been placed?
+    - How's my bet doing on the tennis match?
+
+- intent: CancelBetIntent
+  examples: |
+    - I want to cancel my bet.
+    - I want to cancel my bet on Bayern Munich vs PSG.
+    - Can you cancel my bet on the rugby game?
+    - How do I cancel my bet on Juventus vs AC Milan?
+    - Please cancel my bet on the golf tournament.

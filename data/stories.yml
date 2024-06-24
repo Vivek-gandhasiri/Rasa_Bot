@@ -1,0 +1,45 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: User wants to place a bet
+  steps:
+    - intent: PlaceBetIntent
+    - action: utter_place_bet
+    
+- story: User wants to check bet status
+  steps:
+    - intent: BetStatusIntent
+    - action: utter_check_bet_status
+    
+- story: User wants to cancel a bet
+  steps:
+    - intent: CancelBetIntent
+    - action: utter_cancel_bet
